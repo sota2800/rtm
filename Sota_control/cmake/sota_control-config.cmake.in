@@ -1,0 +1,54 @@
+# Sota_control CMake config file
+#
+# This file sets the following variables:
+# Sota_control_FOUND - Always TRUE.
+# Sota_control_INCLUDE_DIRS - Directories containing the Sota_control include files.
+# Sota_control_IDL_DIRS - Directories containing the Sota_control IDL files.
+# Sota_control_LIBRARIES - Libraries needed to use Sota_control.
+# Sota_control_DEFINITIONS - Compiler flags for Sota_control.
+# Sota_control_VERSION - The version of Sota_control found.
+# Sota_control_VERSION_MAJOR - The major version of Sota_control found.
+# Sota_control_VERSION_MINOR - The minor version of Sota_control found.
+# Sota_control_VERSION_REVISION - The revision version of Sota_control found.
+# Sota_control_VERSION_CANDIDATE - The candidate version of Sota_control found.
+
+message(STATUS "Found Sota_control-@PROJECT_VERSION@")
+set(Sota_control_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(Sota_control_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(Sota_control_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(Sota_control_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(Sota_control_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(Sota_control_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(Sota_control_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(Sota_control_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(Sota_control_VERSION @PROJECT_VERSION@)
+set(Sota_control_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(Sota_control_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(Sota_control_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(Sota_control_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

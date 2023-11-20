@@ -1,0 +1,54 @@
+# vocerecog CMake config file
+#
+# This file sets the following variables:
+# vocerecog_FOUND - Always TRUE.
+# vocerecog_INCLUDE_DIRS - Directories containing the vocerecog include files.
+# vocerecog_IDL_DIRS - Directories containing the vocerecog IDL files.
+# vocerecog_LIBRARIES - Libraries needed to use vocerecog.
+# vocerecog_DEFINITIONS - Compiler flags for vocerecog.
+# vocerecog_VERSION - The version of vocerecog found.
+# vocerecog_VERSION_MAJOR - The major version of vocerecog found.
+# vocerecog_VERSION_MINOR - The minor version of vocerecog found.
+# vocerecog_VERSION_REVISION - The revision version of vocerecog found.
+# vocerecog_VERSION_CANDIDATE - The candidate version of vocerecog found.
+
+message(STATUS "Found vocerecog-@PROJECT_VERSION@")
+set(vocerecog_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(vocerecog_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(vocerecog_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(vocerecog_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(vocerecog_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(vocerecog_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(vocerecog_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(vocerecog_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(vocerecog_VERSION @PROJECT_VERSION@)
+set(vocerecog_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(vocerecog_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(vocerecog_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(vocerecog_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

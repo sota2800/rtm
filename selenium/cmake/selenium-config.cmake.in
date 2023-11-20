@@ -1,0 +1,54 @@
+# selenium CMake config file
+#
+# This file sets the following variables:
+# selenium_FOUND - Always TRUE.
+# selenium_INCLUDE_DIRS - Directories containing the selenium include files.
+# selenium_IDL_DIRS - Directories containing the selenium IDL files.
+# selenium_LIBRARIES - Libraries needed to use selenium.
+# selenium_DEFINITIONS - Compiler flags for selenium.
+# selenium_VERSION - The version of selenium found.
+# selenium_VERSION_MAJOR - The major version of selenium found.
+# selenium_VERSION_MINOR - The minor version of selenium found.
+# selenium_VERSION_REVISION - The revision version of selenium found.
+# selenium_VERSION_CANDIDATE - The candidate version of selenium found.
+
+message(STATUS "Found selenium-@PROJECT_VERSION@")
+set(selenium_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(selenium_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(selenium_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(selenium_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(selenium_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(selenium_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(selenium_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(selenium_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(selenium_VERSION @PROJECT_VERSION@)
+set(selenium_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(selenium_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(selenium_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(selenium_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

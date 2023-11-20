@@ -1,0 +1,54 @@
+# select CMake config file
+#
+# This file sets the following variables:
+# select_FOUND - Always TRUE.
+# select_INCLUDE_DIRS - Directories containing the select include files.
+# select_IDL_DIRS - Directories containing the select IDL files.
+# select_LIBRARIES - Libraries needed to use select.
+# select_DEFINITIONS - Compiler flags for select.
+# select_VERSION - The version of select found.
+# select_VERSION_MAJOR - The major version of select found.
+# select_VERSION_MINOR - The minor version of select found.
+# select_VERSION_REVISION - The revision version of select found.
+# select_VERSION_CANDIDATE - The candidate version of select found.
+
+message(STATUS "Found select-@PROJECT_VERSION@")
+set(select_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(select_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(select_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(select_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(select_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(select_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(select_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(select_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(select_VERSION @PROJECT_VERSION@)
+set(select_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(select_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(select_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(select_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

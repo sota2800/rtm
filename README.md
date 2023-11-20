@@ -10,21 +10,21 @@
  2. システムの概要
 
  3. コンポーネント
-　
+
   1 Facedetection
-　
+
   2 Select
 
   3 Voicerecog
- 
+
   4 Selenium
-　
+
   5 Controlestate
-　
+
   6 Sota_Controle
-　
+
   7 Log
-　
+
   8 Callstaff
 
 5. コンポーネントの接続

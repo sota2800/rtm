@@ -1,0 +1,15 @@
+module Library {
+	struct Dataset {
+
+		string state;
+		wstring recogdata;
+		string command;
+		string phase;
+	};
+	interface voicerecogdata {
+
+		Dataset setresult(in string data);
+		Dataset voicerecog(in Dataset data);
+		Dataset voicerecogadditionalfunction(in Dataset data);
+	};
+};

@@ -1,0 +1,54 @@
+# controlestate CMake config file
+#
+# This file sets the following variables:
+# controlestate_FOUND - Always TRUE.
+# controlestate_INCLUDE_DIRS - Directories containing the controlestate include files.
+# controlestate_IDL_DIRS - Directories containing the controlestate IDL files.
+# controlestate_LIBRARIES - Libraries needed to use controlestate.
+# controlestate_DEFINITIONS - Compiler flags for controlestate.
+# controlestate_VERSION - The version of controlestate found.
+# controlestate_VERSION_MAJOR - The major version of controlestate found.
+# controlestate_VERSION_MINOR - The minor version of controlestate found.
+# controlestate_VERSION_REVISION - The revision version of controlestate found.
+# controlestate_VERSION_CANDIDATE - The candidate version of controlestate found.
+
+message(STATUS "Found controlestate-@PROJECT_VERSION@")
+set(controlestate_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(controlestate_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(controlestate_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(controlestate_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(controlestate_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(controlestate_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(controlestate_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(controlestate_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(controlestate_VERSION @PROJECT_VERSION@)
+set(controlestate_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(controlestate_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(controlestate_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(controlestate_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

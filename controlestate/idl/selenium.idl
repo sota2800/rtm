@@ -1,0 +1,17 @@
+module Library {
+	struct Dataset {
+
+		string state;
+		wstring recogdata;
+		string command;
+		string phase;
+	};
+	interface seleniumdata {
+
+		Dataset setresult(in string data);
+		Dataset search(in Dataset data);
+		Dataset recom(in Dataset data);
+		Dataset certificate(in Dataset data);
+		Dataset seleniumadditionalfunction(in Dataset data);
+	};
+};

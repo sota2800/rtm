@@ -1,0 +1,36 @@
+2023-10-16 13:57:06,098 file.manager INFO 2.0.0
+2023-10-16 13:57:06,098 file.manager INFO Copyright (C) 2003-2022, Noriaki Ando and OpenRTM development team,
+2023-10-16 13:57:06,098 file.manager INFO   Intelligent Systems Research Institute, AIST,
+2023-10-16 13:57:06,098 file.manager INFO Copyright (C) 2022, Noriaki Ando and OpenRTM development team,
+2023-10-16 13:57:06,098 file.manager INFO   Industrial Cyber-Physical Research Center, AIST,
+2023-10-16 13:57:06,098 file.manager INFO   All right reserved.
+2023-10-16 13:57:06,098 file.manager INFO Manager starting.
+2023-10-16 13:57:06,098 file.manager INFO Starting local logging.
+2023-10-16 13:57:06,106 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2023-10-16 13:57:10,230 file.ManagerServant INFO Master manager not found
+2023-10-16 13:57:10,230 file.LocalServiceAdmin INFO All the local services are enabled.
+2023-10-16 13:57:10,274 file.manager INFO Component type conf file: camera.conf loaded.
+2023-10-16 13:57:10,275 file.ec_base INFO setRate(1000000.000000) done
+2023-10-16 13:57:10,275 file.ec_base INFO setRate(100.000000) done
+2023-10-16 13:57:10,276 file.rtobject INFO 1 execution context was created.
+2023-10-16 13:57:10,277 file.rtobject INFO Initial active configuration set is default.
+2023-10-16 13:57:24,405 file.ManagerServant INFO Master manager not found
+2023-10-16 13:57:34,485 file.ManagerServant INFO Master manager not found
+2023-10-16 13:57:44,573 file.ManagerServant INFO Master manager not found
+2023-10-16 13:57:49,673 file.ec_base WARNING The component is not responding.
+2023-10-16 13:57:49,673 file.ec_base ERROR Unknown error: Invalid state transition.
+2023-10-16 13:57:54,801 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:04,869 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:14,955 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:24,884 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:25,940 file.ec_base ERROR The component is not responding.
+2023-10-16 13:58:25,940 file.ec_base ERROR Unknown error: Invalid state transition.
+2023-10-16 13:58:35,006 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:45,017 file.ManagerServant INFO Master manager not found
+2023-10-16 13:58:55,045 file.ManagerServant INFO Master manager not found
+2023-10-16 13:59:05,098 file.ManagerServant INFO Master manager not found
+2023-10-16 13:59:15,211 file.ManagerServant INFO Master manager not found
+2023-10-16 13:59:21,989 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2023-10-16 13:59:21,990 file.SdoServiceAdmin ERROR type  not exists.
+2023-10-16 13:59:25,272 file.ManagerServant INFO Master manager not found
+2023-10-16 13:59:35,284 file.ManagerServant INFO Master manager not found

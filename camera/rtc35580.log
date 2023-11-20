@@ -1,0 +1,36 @@
+2023-10-13 03:15:23,956 file.manager INFO 2.0.0
+2023-10-13 03:15:23,957 file.manager INFO Copyright (C) 2003-2022, Noriaki Ando and OpenRTM development team,
+2023-10-13 03:15:23,957 file.manager INFO   Intelligent Systems Research Institute, AIST,
+2023-10-13 03:15:23,957 file.manager INFO Copyright (C) 2022, Noriaki Ando and OpenRTM development team,
+2023-10-13 03:15:23,957 file.manager INFO   Industrial Cyber-Physical Research Center, AIST,
+2023-10-13 03:15:23,957 file.manager INFO   All right reserved.
+2023-10-13 03:15:23,957 file.manager INFO Manager starting.
+2023-10-13 03:15:23,957 file.manager INFO Starting local logging.
+2023-10-13 03:15:23,963 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2023-10-13 03:15:28,042 file.ManagerServant INFO Master manager not found
+2023-10-13 03:15:28,044 file.LocalServiceAdmin INFO All the local services are enabled.
+2023-10-13 03:15:28,047 file.manager INFO Component type conf file: camera.conf loaded.
+2023-10-13 03:15:28,047 file.ec_base INFO setRate(1000000.000000) done
+2023-10-13 03:15:28,047 file.ec_base INFO setRate(100.000000) done
+2023-10-13 03:15:28,047 file.rtobject INFO 1 execution context was created.
+2023-10-13 03:15:28,049 file.rtobject INFO Initial active configuration set is default.
+2023-10-13 03:15:42,153 file.ManagerServant INFO Master manager not found
+2023-10-13 03:15:52,252 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:02,382 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:12,376 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:15,699 file.ec_base WARNING The component is not responding.
+2023-10-13 03:16:15,699 file.ec_base ERROR Unknown error: Invalid state transition.
+2023-10-13 03:16:20,727 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Users\sotar\AppData\Local\Programs\Python\Python310\lib\site-packages\OpenRTM_aist\DataFlowComponentBase.py", line 123, in on_execute
+    ret = self.onExecute(ec_id)
+  File "C:\Users\sotar\OneDrive\Desktop\library2.01\camera\camera.py", line 297, in onExecute
+    frames = self.pipeline.wait_for_frames()
+RuntimeError: Frame didn't arrive within 5000
+
+2023-10-13 03:16:22,415 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:32,531 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:42,502 file.ManagerServant INFO Master manager not found
+2023-10-13 03:16:52,645 file.ManagerServant INFO Master manager not found
+2023-10-13 03:17:02,641 file.ManagerServant INFO Master manager not found
+2023-10-13 03:17:12,693 file.ManagerServant INFO Master manager not found
+2023-10-13 03:17:16,851 file.ec_worker ERROR State of the RTC is not ACTIVE_STATE.

@@ -1,0 +1,36 @@
+2023-10-13 03:17:33,980 file.manager INFO 2.0.0
+2023-10-13 03:17:33,980 file.manager INFO Copyright (C) 2003-2022, Noriaki Ando and OpenRTM development team,
+2023-10-13 03:17:33,980 file.manager INFO   Intelligent Systems Research Institute, AIST,
+2023-10-13 03:17:33,980 file.manager INFO Copyright (C) 2022, Noriaki Ando and OpenRTM development team,
+2023-10-13 03:17:33,980 file.manager INFO   Industrial Cyber-Physical Research Center, AIST,
+2023-10-13 03:17:33,980 file.manager INFO   All right reserved.
+2023-10-13 03:17:33,980 file.manager INFO Manager starting.
+2023-10-13 03:17:33,980 file.manager INFO Starting local logging.
+2023-10-13 03:17:33,986 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2023-10-13 03:17:38,119 file.ManagerServant INFO Master manager not found
+2023-10-13 03:17:38,120 file.LocalServiceAdmin INFO All the local services are enabled.
+2023-10-13 03:17:38,123 file.manager INFO Component type conf file: camera.conf loaded.
+2023-10-13 03:17:38,124 file.ec_base INFO setRate(1000000.000000) done
+2023-10-13 03:17:38,124 file.ec_base INFO setRate(100.000000) done
+2023-10-13 03:17:38,124 file.rtobject INFO 1 execution context was created.
+2023-10-13 03:17:38,125 file.rtobject INFO Initial active configuration set is default.
+2023-10-13 03:17:52,222 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:02,317 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:12,432 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:22,507 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:32,625 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:38,946 file.ec_base WARNING The component is not responding.
+2023-10-13 03:18:38,946 file.ec_base ERROR Unknown error: Invalid state transition.
+2023-10-13 03:18:43,006 file.ManagerServant INFO Master manager not found
+2023-10-13 03:18:52,884 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:02,984 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:12,988 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:22,937 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:33,008 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:43,110 file.ManagerServant INFO Master manager not found
+2023-10-13 03:19:53,196 file.ManagerServant INFO Master manager not found
+2023-10-13 03:20:03,290 file.ManagerServant INFO Master manager not found
+2023-10-13 03:20:13,390 file.ManagerServant INFO Master manager not found
+2023-10-13 03:20:23,384 file.ManagerServant INFO Master manager not found
+2023-10-13 03:20:33,479 file.ManagerServant INFO Master manager not found
+2023-10-13 03:20:43,453 file.ManagerServant INFO Master manager not found

@@ -1,0 +1,14 @@
+module Library {
+	struct Dataset {
+
+		string state;
+		wstring recogdata;
+		string command;
+		string phase;
+	};
+	interface selectdata {
+
+		Dataset setresult(in string data);
+		Dataset select(in Dataset data);
+	};
+};

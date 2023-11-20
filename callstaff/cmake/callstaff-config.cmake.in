@@ -1,0 +1,54 @@
+# callstaff CMake config file
+#
+# This file sets the following variables:
+# callstaff_FOUND - Always TRUE.
+# callstaff_INCLUDE_DIRS - Directories containing the callstaff include files.
+# callstaff_IDL_DIRS - Directories containing the callstaff IDL files.
+# callstaff_LIBRARIES - Libraries needed to use callstaff.
+# callstaff_DEFINITIONS - Compiler flags for callstaff.
+# callstaff_VERSION - The version of callstaff found.
+# callstaff_VERSION_MAJOR - The major version of callstaff found.
+# callstaff_VERSION_MINOR - The minor version of callstaff found.
+# callstaff_VERSION_REVISION - The revision version of callstaff found.
+# callstaff_VERSION_CANDIDATE - The candidate version of callstaff found.
+
+message(STATUS "Found callstaff-@PROJECT_VERSION@")
+set(callstaff_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(callstaff_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(callstaff_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(callstaff_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(callstaff_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(callstaff_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(callstaff_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(callstaff_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(callstaff_VERSION @PROJECT_VERSION@)
+set(callstaff_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(callstaff_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(callstaff_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(callstaff_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

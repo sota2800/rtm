@@ -1,4 +1,4 @@
-![image](https://github.com/sota2800/rtm/assets/141693046/502fe98d-8cb3-4fb3-b2f6-293e470d926e)# 目次
+# 目次
 1. 初めに
 
    1.1 概要

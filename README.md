@@ -82,6 +82,7 @@ pythonの使用するライブラリとインストール方法を以下に記�
 | facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．|
 
 Dataset型は以下のデータ構造からなる．
+
 struct Dataset {
 
  string state;

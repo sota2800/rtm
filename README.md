@@ -1,4 +1,4 @@
-# 目次
+![image](https://github.com/sota2800/rtm/assets/141693046/502fe98d-8cb3-4fb3-b2f6-293e470d926e)# 目次
 1. 初めに
 
    1.1 概要
@@ -34,7 +34,15 @@
 ## 1.2 開発環境
 本システムの開発環境を以下に記す．
 
-![image](https://github.com/sota2800/rtm/assets/141693046/380a9d42-8eaa-478f-95d2-3fa3022c7764)
+| OS       | Windows11                              |
+| -------- | ----------------------------------------- |
+| RTミドルウェア | OpenRTM-aist-2.0.0-RELESE(Python 版)       |
+| 開発環境     |      Visual Studio Code 1.70|
+| Python   | Python 3.10.8                                     |
+| webブラウザ  | GoogleChrome 117.0.5938.150|
+|ChromeDriver|ChromeDriver 117|
+
+
 
 
 

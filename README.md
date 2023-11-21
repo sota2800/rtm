@@ -41,6 +41,13 @@
 | Python   | Python 3.10.8                                     |
 | webブラウザ  | GoogleChrome 117.0.5938.150|
 |ChromeDriver|ChromeDriver 117|
+## 1.3ハードウェア
+使用するハードウェアを以下に記す
+|コミュニケーションロボット|Vstone Sota|
+| -------- | ----------------------------------------- |
+|カメラ|Intel RealSense D435i|
+|マイク||
+|カメラ||
 
 
 

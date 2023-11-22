@@ -42,14 +42,14 @@
 | Python   | Python 3.10.8                                     |
 | webブラウザ  | GoogleChrome 117.0.5938.150|
 |ChromeDriver|ChromeDriver 117|
-## 1.3ハードウェア
+## 1.3 ハードウェア
 使用するハードウェアを以下に記す
 |コミュニケーションロボット|Vstone Sota|
 | -------- | ----------------------------------------- |
 |カメラ|Intel RealSense D435i|
 |マイク||
 |カメラ||
-## 1.4ライブラリ
+## 1.4 ライブラリ
 pythonの使用するライブラリとインストール方法を以下に記す
 |OpenCV|PyPIからライブラリをインストールする．|
 | -------- | ----------------------------------------- |
@@ -109,7 +109,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
 |voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.|
-## 4.Select
+## 4. Select
 Webページを制御するコンポーネント．Webページの制御にはSeleniiumを使用する．
 
 ・provider
@@ -117,7 +117,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
 |seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
-## 5.controlestate
+## 5. controlestate
  コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コン　ポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
 
 ・Dataport
@@ -140,7 +140,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 |Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
 |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する|
 
-## 6.Sota_control
+## 6. Sota_control
 Sotaを動かすためのコンポーネント
 
 ・Dataport
@@ -151,7 +151,7 @@ Sotaを動かすためのコンポーネント
 | -------- | ---------|-------------------------------- |
 |text|string|Sotaを動かすためのコマンドを受け取る|
 
-## 7.Log
+## 7. Log
 ユーザが使用したサービスを日にちごとにcsvファイルに記録するコンポーネント
 
 ・Dataport
@@ -162,7 +162,7 @@ Sotaを動かすためのコンポーネント
 | -------- | ---------|-------------------------------- |
 |Log|string|ユーザが使用したサービス名をstringで受け取る.|
 
-## 8.Callstaff
+## 8. Callstaff
 職員を呼び出すコンポーネント
 
 ・Dataset

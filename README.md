@@ -118,7 +118,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 | -------- | ---------|-------------------------------- |
 |seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
 ## 5. controlestate
- コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コン　ポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
+コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コンポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
 
 ・Dataport
 　　
@@ -173,7 +173,7 @@ Sotaを動かすためのコンポーネント
 |Callstaff|boolean|Trueを受け取るとIoTデバイスに通信を送り職員を呼び出す．|
 
 # 3. コンポーネントの接続
-　本コンポーネントは以下のように接続する．各コンポーネントにあるoutportのcontrolesotaはコンポーネントSota_controleのinportのtextにつなげる.
+本コンポーネントは以下のように接続する．各コンポーネントにあるoutportのcontrolesotaはコンポーネントSota_controleのinportのtextにつなげる.
   
 ![image](https://github.com/sota2800/rtm/assets/141693046/6bf2ebc5-70bc-4983-9279-b53df679c435)
 

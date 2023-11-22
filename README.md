@@ -95,12 +95,44 @@ struct Dataset {
 
 };
 ## 2. Select
-　ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
+ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
  
 ・provider
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
 |selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．|
+## 3. Voicerecog
+Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH”，“RECOM”が格納されている時に動作するコンポーネント．音声認識によって得られた文字列から，名詞，固有名詞を取り出すために形態素解析を行う．
+ 
+・provider
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.|
+## 4.Select
+Webページを制御するコンポーネント．Webページの制御にはSeleniiumを使用する．
+
+・provider
+
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
+## 5.controlestate
+ コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コン　ポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
+・Dataport
+　　・Outport
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|Controlsota|string|Sotaを動かすためのコマンドを出力する.|
+|Callstaff|boolean|職員を呼び出すときにTrueを送る.|
+|Log|string|ユーザの使用したサービス名をstring型で出力する.
+|
+
+
+
+
+
+
+
 
 
 

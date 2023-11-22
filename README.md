@@ -58,11 +58,11 @@ pythonの使用するライブラリとインストール方法を以下に記�
 |Mediapipe|PyPIからライブラリをインストールする．|
 |MeCab|PyPIからライブラリをインストールする．精度の高い形態素解析を行うために辞書Neologdを使用する．Neologdの導入方法は，以下を参照．https://github.com/neologd/mecab-ipadic-neologd/blob/master/README.ja.md|
 |Pyrealsense2|PyPIからライブラリをインストールする．|
-# 2 システムの概要
+# 2. システムの概要
 本システムは，本の借用や書庫の利用の対応，文献複写の受け取り，筆者の所属大学が大学の理念に基づき学生の評価認定するプロジェクトとして実施しているKONANライブラリーサーティフィケートの対応を行う機能をRTミドルウェアで実装したものである．処理の流れを以下の図に示す．
 
 ![image](https://github.com/sota2800/rtm/assets/141693046/7d2c72ee-c1f7-4a55-bb5e-06e157a1d4b2)
-# 3 コンポーネント
+# 3. コンポーネント
 ## 1 Facedetection
 人が存在するか否かを判断するコンポーネントであり，realsenceから距離と画像データを受け取る．また，Controlestateから受け取ったDatasetのメンバphaseに格納されている文字列によって異なる動作，出力をする．
 
@@ -171,7 +171,7 @@ Sotaを動かすためのコンポーネント
 | -------- | ---------|-------------------------------- |
 |Callstaff|boolean|Trueを受け取るとIoTデバイスに通信を送り職員を呼び出す．|
 
-# 3.コンポーネントの接続
+# 3. コンポーネントの接続
 　本コンポーネントは以下のように接続する．各コンポーネントにあるoutportのcontrolesotaはコンポーネントSota_controleのinportのtextにつなげる.
   
 ![image](https://github.com/sota2800/rtm/assets/141693046/6bf2ebc5-70bc-4983-9279-b53df679c435)

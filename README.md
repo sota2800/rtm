@@ -95,10 +95,13 @@ struct Dataset {
 
 };
 ## 2. Select
-　ユーザの要望を聞き取るコンポーネント． Controlestateから受け取ったDatasetのメンバphase 　
-　に文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列に
-　よって異なる出力をする．　
+　ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
+ 
 ・provider
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．|
+
 
 
 

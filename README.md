@@ -118,14 +118,71 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 |seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
 ## 5.controlestate
  コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コン　ポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
+
 ・Dataport
-　　・Outport
+　　
+  ・Outport
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
 |Controlsota|string|Sotaを動かすためのコマンドを出力する.|
 |Callstaff|boolean|職員を呼び出すときにTrueを送る.|
-|Log|string|ユーザの使用したサービス名をstring型で出力する.
-|
+|Log|string|ユーザの使用したサービス名をstring型で出力する.|
+
+・Serviceport
+
+　・Consumer
+
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+|Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+|Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+|Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する|
+
+## 6.Sota_control
+Sotaを動かすためのコンポーネント
+
+・Dataport
+
+・Outport
+
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|text|string|Sotaを動かすためのコマンドを受け取る|
+
+## 7.Log
+ユーザが使用したサービスを日にちごとにcsvファイルに記録するコンポーネント
+
+・Dataport
+
+・Outport
+
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|Log|string|ユーザが使用したサービス名をstringで受け取る.|
+
+## 8.Callstaff
+職員を呼び出すコンポーネント
+
+・Dataset
+
+| 名称   | 型  | 説明                              |
+| -------- | ---------|-------------------------------- |
+|Callstaff|boolean|Trueを受け取るとIoTデバイスに通信を送り職員を呼び出す．|
+
+# 3.コンポーネントの接続
+　本コンポーネントは以下のように接続する．各コンポーネントにあるoutportのcontrolesotaはコンポーネントSota_controleのinportのtextにつなげる.
+  
+![image](https://github.com/sota2800/rtm/assets/141693046/6bf2ebc5-70bc-4983-9279-b53df679c435)
+
+
+
+
+
+
+
+
+
 
 
 

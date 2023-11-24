@@ -35,24 +35,28 @@
 ## 1.2 開発環境
 本システムの開発環境を以下に記す．
 
-| OS       | Windows11                              |
+|名称|バージョン|
 | -------- | ----------------------------------------- |
+| OS       | Windows11                              |
 | RTミドルウェア | OpenRTM-aist-2.0.0-RELESE(Python 版)       |
 | 開発環境     |      Visual Studio Code 1.70|
 | Python   | Python 3.10.8                                     |
 | webブラウザ  | GoogleChrome 117.0.5938.150|
 |ChromeDriver|ChromeDriver 117|
 ## 1.3 ハードウェア
-使用するハードウェアを以下に記す
+使用するハードウェアを以下に記す.
+
 |コミュニケーションロボット|Vstone Sota|
 | -------- | ----------------------------------------- |
 |カメラ|Intel RealSense D435i|
 |マイク||
 |カメラ||
 ## 1.4 ライブラリ
-pythonの使用するライブラリとインストール方法を以下に記す
-|OpenCV|PyPIからライブラリをインストールする．|
+pythonの使用するライブラリとインストール方法を以下に記す.
+
+|名称|インストール方法|
 | -------- | ----------------------------------------- |
+|OpenCV|PyPIからライブラリをインストールする．|
 |Selenium|PyPIからライブラリをインストールする．Chromeのバージョンに合うChromedriver を以下のURLからダウンロードしSeleniumフォルダに移す．https://chromedriver.chromium.org/downloads|
 |Azure cognictive speech|PyPIからライブラリをインストールする．|
 |Mediapipe|PyPIからライブラリをインストールする．|
@@ -70,11 +74,11 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 **serviceport**
 
-- provider
+  - provider
 
 	| 名称   | 型  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．|
+	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．その他のメンバは，受け取ったデータを代入する．|
 
 **受け取った文字列がDetection-2の場合**
 

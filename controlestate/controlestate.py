@@ -35,7 +35,7 @@ import selenium_idl
 import Library, Library__POA
 
 import azure.cognitiveservices.speech as speechsdk
-speech_config = speechsdk.SpeechConfig(subscription="9e71ff957dc44910a92ce6f8600110e7", region="japanwest")
+speech_config = speechsdk.SpeechConfig(subscription="***********************", region="japanwest")
 audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
 speech_config.speech_synthesis_voice_name='ja-JP-NanamiNeural'
 speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)

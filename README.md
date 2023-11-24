@@ -134,12 +134,12 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 
 　・Consumer
 
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-|Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-|Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-|Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-|Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する|
+   | 名称   | 型  | 説明                              |
+   | -------- | ---------|-------------------------------- |
+   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+   |Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+   |Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
+   |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する|
 
 ## 6. Sota_control
 Sotaを動かすためのコンポーネント

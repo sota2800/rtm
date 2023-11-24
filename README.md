@@ -124,7 +124,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH
 	| -------- | ---------|-------------------------------- |
 	|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 4. Select
-Webページを制御するコンポーネント．Webページの制御にはSeleniiumを使用する．
+Webページを制御するコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SEARCH”,”RECOM”,”CERTIFICATE”が格納されている時に動作する．Webページの制御にはSeleniiumを使用する．
 
 **serviceport**
 

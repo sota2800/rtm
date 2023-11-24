@@ -68,6 +68,8 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 **受け取った文字列がDetection-1の場合**
 
+**serviceport**
+
 - provider
 
 	| 名称   | 型  | 説明                              |
@@ -75,6 +77,8 @@ pythonの使用するライブラリとインストール方法を以下に記�
 	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．|
 
 **受け取った文字列がDetection-2の場合**
+
+**serviceport**
 
 - provider
 
@@ -134,7 +138,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
  
 	| 名称   | 型  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	|Controlsota|string|Sotaを動かすためのコマンドを出力する.|
+	|Controlsota|string|Sotaを動かすためのコマンドをstring型で出力する.|
 	|Callstaff|boolean|職員を呼び出すときにTrueを送る.|
 	|Log|string|ユーザの使用したサービス名をstring型で出力する.|
 
@@ -150,7 +154,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
    |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する．|
 
 ## 6. Sota_control
-Sotaを動かすためのコンポーネント．
+コミュニケーションロボットSotaを動かすためのコンポーネント．
 
 **Dataport**
 

@@ -152,10 +152,10 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 
    | 名称   | 型 (引数・返り値） | 説明                              |
    | -------- | ---------|-------------------------------- |
-   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列"Detection-1"または"Detection-2"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Selectnconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Voicerecogconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Seleniumconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 
 ## 6. Sota_control
 コミュニケーションロボットSotaを動かすためのコンポーネント．

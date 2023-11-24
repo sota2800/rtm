@@ -27,7 +27,7 @@ import select_idl
 from select_idl_example import *
 
 import azure.cognitiveservices.speech as speechsdk
-speech_config = speechsdk.SpeechConfig(subscription="a64cf6b636ad4e0590a25b051a44adbc", region="japanwest")
+speech_config = speechsdk.SpeechConfig(subscription="***********************", region="japanwest")
 audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
 speech_config.speech_synthesis_voice_name='ja-JP-NanamiNeural'
 speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)

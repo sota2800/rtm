@@ -92,17 +92,17 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 Dataset型は以下のデータ構造からなる．
 
-struct Dataset {
-
- string state;
-
- wstring recogdata;
-
- string command;
-
- string phase;
-
-};
+		struct Dataset {
+		
+			 string state;
+			
+			 wstring recogdata;
+			
+			 string command;
+			
+			 string phase;
+		
+		};
 ## 2. Select
 ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
 

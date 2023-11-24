@@ -76,9 +76,9 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
   - provider
 
-	| 名称   | 型  | 説明                              |
+	| 名称   | 型（引数・返り値）  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．その他のメンバは，受け取ったデータを代入する．|
+	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．その他のメンバには，受け取ったデータを代入する．|
 
 **受け取った文字列がDetection-2の場合**
 

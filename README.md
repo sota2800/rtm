@@ -60,7 +60,7 @@ pythonの使用するライブラリとインストール方法を以下に記�
 |Selenium|PyPIからライブラリをインストールする．Chromeのバージョンに合うChromedriver を以下のURLからダウンロードしSeleniumフォルダに移す．https://chromedriver.chromium.org/downloads|
 |Azure cognictive speech|PyPIからライブラリをインストールする．|
 |Mediapipe|PyPIからライブラリをインストールする．|
-|MeCab|PyPIからライブラリをインストールする．精度の高い形態素解析を行うために辞書Neologdを使用する．Neologdの導入方法は，以下を参照．https://github.com/neologd/mecab-ipadic-neologd/blob/master/README.ja.md|
+|MeCab|精度の高い形態素解析を行うために辞書Neologdを使用する．Neologdの導入方法は，以下を参照．https://github.com/neologd/mecab-ipadic-neologd/blob/master/README.ja.md|
 |Pyrealsense2|PyPIからライブラリをインストールする．|
 # 2. システムの概要
 本システムは，本の借用や書庫の利用の対応，文献複写の受け取り，筆者の所属大学が大学の理念に基づき学生の評価認定するプロジェクトとして実施しているKONANライブラリーサーティフィケートの対応を行う機能をRTミドルウェアで実装したものである．処理の流れを以下の図に示す．

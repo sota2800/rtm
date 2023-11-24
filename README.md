@@ -143,7 +143,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 	| 名称   | 型  | 説明                              |
 	| -------- | ---------|-------------------------------- |
 	|Controlsota|string|Sotaを動かすためのコマンドをstring型で出力する.|
-	|Callstaff|boolean|職員を呼び出すときにTrueを送る.|
+	|Callstaff|boolean|職員を呼び出すときにboolean型でTrueを出力する.|
 	|Log|string|ユーザの使用したサービス名をstring型で出力する.|
 
 **Serviceport**

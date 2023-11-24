@@ -78,7 +78,7 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 	| 名称   | 型（引数・返り値）  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．その他のメンバには，受け取ったデータを代入する．|
+	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．その他のメンバには，受け取ったデータをそれぞれ代入する．|
 
 **受け取った文字列がDetection-2の場合**
 
@@ -86,9 +86,9 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 - provider
 
-	| 名称   | 型  | 説明                              |
+	| 名称   | 型（引数・返り値）  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．|
+	| facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．その他のメンバには，受け取ったデータをそれぞれ代入する．|
 
 Dataset型は以下のデータ構造からなる．
 
@@ -110,7 +110,7 @@ struct Dataset {
  
 - provider
   
-	| 名称   | 型  | 説明                              |
+	| 名称   | 型 （引数・返り値）| 説明                              |
 	| -------- | ---------|-------------------------------- |
 	|selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．|
 ## 3. Voicerecog
@@ -120,7 +120,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH
  
 - provider
 
-	| 名称   | 型  | 説明                              |
+	| 名称   | 型（引数・返り値） | 説明                              |
 	| -------- | ---------|-------------------------------- |
 	|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.|
 ## 4. Select
@@ -130,7 +130,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 
 - provider
 
-	| 名称   | 型  | 説明                              |
+	| 名称   | 型 (引数・返り値） | 説明                              |
 	| -------- | ---------|-------------------------------- |
 	|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
 ## 5. controlestate
@@ -150,7 +150,7 @@ Webページを制御するコンポーネント．Webページの制御にはSe
 
 - Consumer
 
-   | 名称   | 型  | 説明                              |
+   | 名称   | 型 (引数・返り値） | 説明                              |
    | -------- | ---------|-------------------------------- |
    |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．|
    |Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．|

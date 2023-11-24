@@ -30,7 +30,7 @@
 5. コンポーネントの接続
 # 1. 初めに
 ## 1.1 概要
-近年グループウェア，学習支援システム，窓口業務システムなど様々なサービスが， Webブラウザ上で利用されるいわゆるWebシステムとして提供されるようになった．一方既存サービスの変更の際には，従来システムへの影響を十分に考慮する必要があり，各機能の保守や改良への対応が困難である．本稿ではこれらを解決するために，既存システムの API や SDK を利用したプログラミングを使用せず，クラウドAIサービスを利用し短期間かつ容易に開発可能なシステムの一例として，
+  近年グループウェア，学習支援システム，窓口業務システムなど様々なサービスが， Webブラウザ上で利用されるいわゆるWebシステムとして提供されるようになった．一方既存サービスの変更の際には，従来システムへの影響を十分に考慮する必要があり，各機能の保守や改良への対応が困難である．本稿ではこれらを解決するために，既存システムの API や SDK を利用したプログラミングを使用せず，クラウドAIサービスを利用し短期間かつ容易に開発可能なシステムの一例として，
 音声認識・合成，RGBDカメラによる画像認識を活用したWebブラウザ検索システムをRTミドルウェアを用いて開発し，そのシステム構築例として示す.
 ## 1.2 開発環境
 本システムの開発環境を以下に記す．
@@ -66,21 +66,21 @@ pythonの使用するライブラリとインストール方法を以下に記�
 ## 1 Facedetection
 人が存在するか否かを判断するコンポーネントであり，realsenceから距離と画像データを受け取る．また，Controlestateから受け取ったDatasetのメンバphaseに格納されている文字列によって異なる動作，出力をする．
 
-・受け取った文字列がDetection-1の場合
+**受け取った文字列がDetection-1の場合**
 
- ・provider
+- provider
 
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．|
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	| facedetectionprovider | Dataset |人がいる場合のみDatasetのメンバPhaseに文字列“Select”を格納し出力する．|
 
-・受け取った文字列がDetection-2の場合
+**受け取った文字列がDetection-2の場合**
 
-・provider
+- provider
 
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-| facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．|
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	| facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．|
 
 Dataset型は以下のデータ構造からなる．
 
@@ -98,66 +98,66 @@ struct Dataset {
 ## 2. Select
 ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
  
-・provider
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-|selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．|
+- provider
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	|selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．|
 ## 3. Voicerecog
 Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH”，“RECOM”が格納されている時に動作するコンポーネント．音声認識によって得られた文字列から，名詞，固有名詞を取り出すために形態素解析を行う．
  
-・provider
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.|
+- provider
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.|
 ## 4. Select
 Webページを制御するコンポーネント．Webページの制御にはSeleniiumを使用する．
 
-・provider
+- provider
 
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.|
 ## 5. controlestate
 コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コンポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
 
-・Dataport
+**Dataport**
 　　
-　・Outport
+- Outport
  
-| 名称   | 型  | 説明                              |
-| -------- | ---------|-------------------------------- |
-|Controlsota|string|Sotaを動かすためのコマンドを出力する.|
-|Callstaff|boolean|職員を呼び出すときにTrueを送る.|
-|Log|string|ユーザの使用したサービス名をstring型で出力する.|
+	| 名称   | 型  | 説明                              |
+	| -------- | ---------|-------------------------------- |
+	|Controlsota|string|Sotaを動かすためのコマンドを出力する.|
+	|Callstaff|boolean|職員を呼び出すときにTrueを送る.|
+	|Log|string|ユーザの使用したサービス名をstring型で出力する.|
 
-・Serviceport
+**Serviceport**
 
-　・Consumer
+- Consumer
 
    | 名称   | 型  | 説明                              |
    | -------- | ---------|-------------------------------- |
-   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-   |Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-   |Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する|
-   |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する|
+   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．|
+   |Selectnconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．|
+   |Voicerecogconsumer|Dataset|Datasetのメンバphaseに文字列を格納して出力する．|
+   |Seleniumconsumer|Dataset|Datasetのメンバphase，recogdataに文字列を格納して出力する．|
 
 ## 6. Sota_control
-Sotaを動かすためのコンポーネント
+Sotaを動かすためのコンポーネント．
 
-・Dataport
+**Dataport**
 
-・Outport
+- Outport
 
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
-|text|string|Sotaを動かすためのコマンドを受け取る|
+|text|string|Sotaを動かすためのコマンドを受け取る．|
 
 ## 7. Log
-ユーザが使用したサービスを日にちごとにcsvファイルに記録するコンポーネント
+ユーザが使用したサービスを日にちごとにcsvファイルに記録するコンポーネント．
 
-・Dataport
+**Dataport**
 
-・Outport
+- Outport
 
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |
@@ -166,7 +166,9 @@ Sotaを動かすためのコンポーネント
 ## 8. Callstaff
 職員を呼び出すコンポーネント
 
-・Dataset
+**Dataset**
+
+- Outport
 
 | 名称   | 型  | 説明                              |
 | -------- | ---------|-------------------------------- |

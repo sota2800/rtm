@@ -104,7 +104,7 @@ Dataset型は以下のデータ構造からなる．
 		
 		};
 ## 2. Select
-ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
+ユーザの要望を聞き取るコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SELECT”,”AGAIN”,”REPEAT”のいずれか，いずれか，かつメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"が格納されている時に動作する．音声認識した文字列によって異なる出力をする．
 
 **serviceport**
  
@@ -114,7 +114,7 @@ Dataset型は以下のデータ構造からなる．
 	| -------- | ---------|-------------------------------- |
 	|selectprovider|Dataset|Datasetのメンバphaseには，ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字をそれぞれ格納し，メンバstateには文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 3. Voicerecog
-Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH”，“RECOM”が格納されている時に動作するコンポーネント．音声認識によって得られた文字列から，名詞，固有名詞を取り出すために形態素解析を行う．
+Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH”，“RECOM”のいずれか，かつメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"が格納されている時に動作するコンポーネント．音声認識によって得られた文字列から，名詞，固有名詞を取り出すために形態素解析を行う．
 
  **serviceport**
  
@@ -124,7 +124,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH
 	| -------- | ---------|-------------------------------- |
 	|voicerecogprovider|Dataset|Datasetのメンバrecogdataには形態素解析によって得られた名詞，固有名詞を格納し，メンバstateには文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 4. Select
-Webページを制御するコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SEARCH”,”RECOM”,”CERTIFICATE”が格納されている時に動作する．Webページの制御にはSeleniiumを使用する．
+Webページを制御するコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SEARCH”,”RECOM”,”CERTIFICATE”のいずれか，かつメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"が格納されている時に動作する．Webページの制御にはSeleniiumを使用する．
 
 **serviceport**
 

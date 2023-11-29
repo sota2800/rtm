@@ -78,7 +78,7 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 	| 名称   | 型（引数・返り値）  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合のみDataset型のメンバPhaseに文字列“Select”を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+	| facedetectionprovider | Dataset |人がいる場合のみDataset型のメンバPhaseに文字列“Select”,メンバstateに文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 
 **受け取った文字列がDetection-2の場合**
 
@@ -88,7 +88,7 @@ pythonの使用するライブラリとインストール方法を以下に記�
 
 	| 名称   | 型（引数・返り値）  | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	| facedetectionprovider | Dataset |人がいる場合は，contlolestateから受け取ったDataset型のデータをそのまま出力し，人がいない場合は，DatasetのメンバPhaseに文字列“STOP”を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+	| facedetectionprovider | Dataset |人がいる場合は，Datasetのメンバstateに文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力し，その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．人がいない場合は，DatasetのメンバPhaseに文字列“STOP”，メンバstateに文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 
 Dataset型は以下のデータ構造からなる．
 
@@ -112,7 +112,7 @@ Dataset型は以下のデータ構造からなる．
   
 	| 名称   | 型 （引数・返り値）| 説明                              |
 	| -------- | ---------|-------------------------------- |
-	|selectprovider|Dataset|ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字Datasetのメンバphaseに格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+	|selectprovider|Dataset|Datasetのメンバphaseには，ユーザが検索を行う場合は”SEARCH”,お勧めの本を紹介してほしい場合は”RECOM”,甲南ライブラリーサーティフィケイトを利用する場合は” CERTIFICATE”,図書職員を読んでほしい場合は” STAFFCALL”の４種類の文字をそれぞれ格納し，メンバstateには文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 3. Voicerecog
 Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH”，“RECOM”が格納されている時に動作するコンポーネント．音声認識によって得られた文字列から，名詞，固有名詞を取り出すために形態素解析を行う．
 
@@ -122,7 +122,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列”SEARCH
 
 	| 名称   | 型（引数・返り値） | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	|voicerecogprovider|Dataset|形態素解析によって得られた名詞，固有名詞をDatasetのメンバrecogdataに格納し出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+	|voicerecogprovider|Dataset|Datasetのメンバrecogdataには形態素解析によって得られた名詞，固有名詞を格納し，メンバstateには文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 4. Select
 Webページを制御するコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列”SEARCH”,”RECOM”,”CERTIFICATE”が格納されている時に動作する．Webページの制御にはSeleniiumを使用する．
 
@@ -132,7 +132,7 @@ Webページを制御するコンポーネント．Controlestateから受け取�
 
 	| 名称   | 型 (引数・返り値） | 説明                              |
 	| -------- | ---------|-------------------------------- |
-	|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+	|seleniumprovider|Dataset|処理が終了したことをDatasetのメンバphaseに格納して出力する.メンバstateには文字列"STATE_RUNNING_CONSUMERREAD"を格納し出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 ## 5. controlestate
 コンポーネントから受け取ったデータを別のコンポーネントに出力する．また，コンポーネント“Controlsota”,“Callstaff”,“Log”にデータを出力する．
 
@@ -152,10 +152,10 @@ Webページを制御するコンポーネント．Controlestateから受け取�
 
    | 名称   | 型 (引数・返り値） | 説明                              |
    | -------- | ---------|-------------------------------- |
-   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列"Detection-1"または"Detection-2"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Selectnconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Voicerecogconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-   |Seleniumconsumer|Dataset|出力するDataset型のメンバに，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Facedetectionconsumer|Dataset|Datasetのメンバphaseに文字列"Detection-1"または"Detection-2",メンバstateに文字列"STATE_RUNNING_PROVIDERREAD"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Selectnconsumer|Dataset|Datasetのメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Voicerecogconsumer|Dataset|Datasetのメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
+   |Seleniumconsumer|Dataset|Datasetのメンバstateに文字列"STATE_RUNNING_PROVIDERREAD"を格納して出力する．その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
 
 ## 6. Sota_control
 コミュニケーションロボットSotaを動かすためのコンポーネント．

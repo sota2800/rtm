@@ -122,7 +122,7 @@ Controlestateから受け取ったDatasetのメンバphase に文字列“SEARCH
 	| 名称   | 型（引数・返り値） | 説明                              |
 	| -------- | ---------|-------------------------------- |
 	|voicerecogprovider|Dataset|Datasetのメンバrecogdataには形態素解析によって得られた名詞，固有名詞を格納し，メンバstateには文字列“STATE_RUNNING_CONSUMERREAD”を格納し出力する.その他の出力するDataset型のメンバには，受け取ったDataset型のメンバの値をそれぞれ代入する．|
-## 4. Select
+## 4. Selenium
 Webページを制御するコンポーネント．Controlestateから受け取ったDatasetのメンバphaseに文字列“SEARCH”,“RECOM”,“CERTIFICATE”のいずれか，かつメンバstateに文字列“STATE_RUNNING_PROVIDERREAD”が格納されている時に動作する．Webページの制御にはSeleniiumを使用する．
 
 **serviceport**
